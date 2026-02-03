@@ -4,6 +4,9 @@ inputs:
   language:
     description: "CodeQL language (e.g. csharp, java-kotlin, cpp)"
     required: true
+  solution:
+    description: "Optional solution or project file to build (e.g. eShopOnWeb.sln)"
+    required: false
 
 runs:
   using: "composite"
@@ -14,12 +17,17 @@ runs:
       with:
         dotnet-version: "8.0.x"
 
-    - name: Restore + Build (C#)
+      - name: Restore + Build (C#)
       if: ${{ inputs.language == 'csharp' }}
       shell: bash
       run: |
         set -euo pipefail
         dotnet --info
-        # If your repo has a solution at root:
-        dotnet restore
-        dotnet build -c Release --no-restore
+        if [ -n "${{ inputs.solution }}" ]; then
+          dotnet restore "${{ inputs.solution }}"
+          dotnet build "${{ inputs.solution }}" -c Release --no-restore
+        else
+          # If your repo has a solution at root:
+          dotnet restore
+          dotnet build -c Release --no-restore
+        fi
