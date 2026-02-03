@@ -1,0 +1,16 @@
+name: CodeQL Advanced Scanning
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  codeql:
+    uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/workflows/moonpig-codeql.yml@main
+    with:
+      build-modes: '{"csharp":"manual"}'
+      codeql-config: ""
+    secrets: inherit
