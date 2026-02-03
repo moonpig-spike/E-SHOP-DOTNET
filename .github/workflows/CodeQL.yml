@@ -10,39 +10,9 @@ on:
 
 jobs:
   codeql:
-    uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/workflows/moonpig-codeql.yml@master
+    uses: ./.github/workflows/codeql-config-SPIKE.yaml
     with:
       build-modes: '{"csharp":"manual"}'
       codeql-config: ""
     secrets:
-      MNPG_GITHUB_READ_APP_ID: "2787257"
-      
-      MNPG_GITHUB_READ_APP_PEM_FILE: |
-        -----BEGIN RSA PRIVATE KEY-----
-        MIIEpAIBAAKCAQEAv/kpB8/fUPH+4EQhhFv6S6BkTwI7N9gJzigXUwVxy84PBN1L
-        XMwHZc40Z2GdMYjkNgIJ6ed0Kq5aDi8N28/DvEVCSnbxRHkeGHiYCWLDBt5Q6lCN
-        gf+BclMliMxuCqDODhqyLtGUd1lMWo8bZWuFPr5PuerXG4SpLkImMBu02EVetC/I
-        c60+sno8E8wUEwaLAQOGXZffiU6+QVqMiWWAzn1v7dBebRLfMK42JnrWXaw8jTET
-        Put4oq0iqFneyqtSfAFJmZb4TUkLuN9gm4GGnSySTV4dYnLV9ctpXOjf3siwioKK
-        f03epEbDM0aRbbSeDOZVsqTq9OJ75RwmJEAPywIDAQABAoIBAAnZHFO8RDaA05Rp
-        qlaB6WsrxTmQYb1Rpd8fi2LE6ruLzJVxTMZr6Q098M5E4a2C2kIzBJMtPnZaD2Ce
-        5VUbaW0lGGt9go8Cr5qNxS7mFB8sFHaQv1Gl69wTi99irVp6OVfb4rwoIDenKxWS      
-        NdOUGnfHh4uAEpzkx1EKL69UHIjjn2InbOjz64SHBwVgXWbf5vb6ZONtBQK4RFK1
-        +gL14TTRTYAQrLyDE7W0GqfRJrI3KpnAbjvD6PJN88SMod0L2xRA6zrXe17WL4+N
-        YF1Orh3k+QWsIh1wbXu1O9Jgz+8hTpqU2fGazTNMOLf1K9yRrKgvlvLMELJw0dTK
-        TciHzdECgYEA4jyseSCgzq9RtAs0jVLrmAdQTbHwnMiPcuRoX2ZeS0+T+gJO80Yp        
-        t/RYFWQGFjei/TbAvtOIFZTDDpxDy279bJOELQWmVXlJN5v+u2Mz6S5XQjh9ZTQ+
-        AtfcqbAJ182zFYFoGn6POtbpyoP6J/zzTwdXR339zqCy2eCRV/pI4mcCgYEA2TqJ
-        BBBvPPYFFQYMuws8xRGokjseKo8A2iMNiJeJ3IFPUZIZCeaBlDdTNQUshqGN1IMi
-        NLpqfYladop068mAgYpfm005HC3iaAGyz/YhMKdm/B7XSyxWaRzP3p6o8dY0sW5D
-        +QeKfsnAkWsUr/h7KWqpKb2jCY8BxdXuXAjzMP0CgYEApjPQuUPBH1Yo/c3lk5VB
-        QvTMh+ebTnMA/3TRQJSh3U3e9iJQAeSfrWaydzR+TEAfW0qoGwinxsL88XTXUVJ+
-        lw9gYPrvkYeCxHmzj9J3Rm0m6Z06cekJTWlr0LVk5cdWMwxYgG5NpvpP0tlWI55u        
-        2LYZ5ommte/UtL+Hx0w10y0CgYEAkKHjplwW5Fzdh2Duyv6xaHjYZvyLmkR6icK6
-        +Q4EkVdba3E90JS0A+5OLUgTnFQmba8d8EOKMalpHPIU5QTV1eo+u9VPyA5Y52zy        
-        FHrJIG7lJ8qVCA0uP3AaixvSWqqHjPdgtIcr1D0aRPgp3vwvbKUCmrMTwYKA6KsG          
-        uCqRWTUCgYBm4Jw4imdMN5PCfSRI1/bnltQki53gotGPVCYpEaDlMkCANeJlH2Kl        
-        /KGnQrNfv7j9nkkID6OEdHHAT6btAWlcnxf8gdg8Sa2mrF0n7+u+BlM/ET9HfabX
-        dyY7YJ7PztL3N6fGrZWWo2XwIzqlGQuwDka19l2dEkBdrGi+SEFdUA==
-        -----END RSA PRIVATE KEY-----  
       MNPG_CODEQL_SLACK_WEBHOOK_URL: "https://webhook.site/77478453-de7f-4c78-8bb2-bf95fce25738"
