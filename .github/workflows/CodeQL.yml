@@ -10,7 +10,8 @@ on:
 
 jobs:
   codeql:
-    uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/workflows/moonpig-codeql.yml@master
+      environment: SPIKE_TEST_ENV
+      uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/workflows/moonpig-codeql.yml@master
     with:
       build-modes: '{"csharp":"manual"}'
       codeql-config: ""
