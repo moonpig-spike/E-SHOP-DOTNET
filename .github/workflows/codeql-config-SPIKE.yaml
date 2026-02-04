@@ -10,7 +10,7 @@ on:
       codeql-config:
         description: "CodeQL config file reference."
         type: string
-        default: "moonpig-spike/SPIKE-WORKFLOW-TEST/codeql/codeql-config.yaml@master"
+        default: ".github/codeql/codeql-config.yaml"
     secrets:
       MNPG_CODEQL_SLACK_WEBHOOK_URL:
         required: false
@@ -53,9 +53,9 @@ jobs:
 
       - if: ${{ matrix.language == 'csharp' }}
         name: Setup Nuget Source
-        uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/actions/dotnet-nuget-setup@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          dotnet --version
+          dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org --allow-unencrypted-transport || true
 
       - name: Checkout repository
         uses: actions/checkout@v6
