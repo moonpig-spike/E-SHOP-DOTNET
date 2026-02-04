@@ -53,7 +53,7 @@ jobs:
 
       - if: ${{ matrix.language == 'csharp' }}
         name: Setup Nuget Source
-        uses: moonpig/moonpig-ops-pipeline-workflows/.github/actions/dotnet-nuget-setup@master
+        uses: moonpig-spike/SPIKE-WORKFLOW-TEST/.github/actions/dotnet-nuget-setup@master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
