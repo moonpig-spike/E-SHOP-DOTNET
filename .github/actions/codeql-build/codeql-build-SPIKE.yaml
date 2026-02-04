@@ -10,7 +10,7 @@ on:
       codeql-config:
         description: "CodeQL config file reference."
         type: string
-        default: "moonpig-spike/SPIKE-WORKFLOW-TEST/codeql/codeql-config.yaml@master"
+        default: ""
     secrets:
       MNPG_GITHUB_READ_APP_ID:
         required: true
